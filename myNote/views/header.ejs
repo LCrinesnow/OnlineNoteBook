@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/common.css">
+</head>
+<body>
+
+<div class="clearfix page-nav">
+    <!--这里判断user是不是为空,若为空的话显示注册登录,不为空的话说明session没过期或没有quit-->
+    <%if(user){%>
+    <div class="pull-left nav-username">欢迎你,<%=user.username %>!</div>
+    <div class="pull-left "><a href="/post">发表</a></div>
+    <div class="pull-right nav-quit"><a href="/quit">退出</a></div>
+    <%}else {%>
+    <div class="pull-right nav-register"><a href="/register">注册</a></div>
+    <div class="pull-right nav-login"><a href="/login">登录</a></div>
+    <%} %>
+</div>
