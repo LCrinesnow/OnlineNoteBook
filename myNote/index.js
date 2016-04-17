@@ -196,6 +196,9 @@ app.get('/login',function(req,res){
 //响应登录页面post请求
 app.post('/login',function(req,res){
     var username = req.body.username, password = req.body.password;
+    console.log(username);
+    console.log(password);
+
     User.findOne({username:username},function(err,user){
        if(err){
            console.log(err);
